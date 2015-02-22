@@ -8,7 +8,7 @@ RUN apt-get update \
 
 RUN mkdir -p /data/http/plugins/af_fullpost
 RUN git clone https://github.com/itohsnap/ttrss_fullpost.git /data/http/plugins/af_fullpost
-RUN apt-get purge -y git
+RUN apt-get purge -y git && apt-get -y autoremove
 RUN apt-get clean
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
